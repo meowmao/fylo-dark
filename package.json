@@ -1,0 +1,23 @@
+{
+  "name": "fylo-dark",
+  "version": "1.0.0",
+  "description": "![Design preview for the Fylo dark theme landing page challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meowmao/fylo-dark.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meowmao/fylo-dark/issues"
+  },
+  "homepage": "https://github.com/meowmao/fylo-dark#readme",
+  "devDependencies": {
+    "sass": "^1.32.8"
+  }
+}
