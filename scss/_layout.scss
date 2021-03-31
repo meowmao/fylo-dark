@@ -1,0 +1,381 @@
+header{
+    .logo{
+        width: 5em;
+    }
+
+    a{
+        color: $white;
+        font-family: $raleway;
+        font-size: 0.8em;
+    }
+
+    .nav__link:not(:last-child){
+        margin-right: $xsmall;
+    }
+
+
+//desktop layout
+    @include desktop{
+        &{
+            padding: $padding-main;
+        }
+
+        .logo{
+            width: 8em;
+        }
+
+        a{
+            font-size: initial;
+
+            &:hover{
+                border-bottom: 1px solid white;
+            }
+        }
+
+        a:not(:last-child){
+            margin-right: $small;
+        }
+
+    }
+
+   
+}
+
+.hero{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    text-align: center; 
+    
+    @include spacing(mobile);
+    
+
+
+    img{
+        width: 100%;
+        max-width: 800px;
+        flex-grow: 1;
+        
+    }
+
+    .cta{
+        width: 60%;
+        max-width: 18rem;
+        margin-bottom: $xlarge;
+    }
+
+    @include desktop(){
+        @include spacing(desktop);
+        
+        h1{
+            max-width: 34rem;
+        }
+
+        p{
+            max-width: 30rem;
+        }
+
+    }
+
+}
+
+.features{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    
+    text-align: center;
+    @include spacing($medium); //spacing for each feature
+
+    .feature{
+        @include spacing($xsmall); //spacing within feature elements
+        margin-bottom: $large;
+    }
+    
+    margin-bottom: $xlarge;
+
+    @include desktop{
+        flex-direction: row;
+        justify-content: space-around;
+
+        .feature{
+            max-width: 50%;
+
+            &__p{
+                width: 485px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+}
+
+.article{
+
+    margin-bottom: $xlarge;
+
+    &__image{
+        width: 100%;
+        max-width: 800px;
+        margin-bottom: $medium;
+    }
+
+    &__text{
+        @include spacing(mobile);
+        h1{
+        font-size: 1rem;
+        }
+
+        a{
+        color: $cyan;
+        border-bottom: 1px solid $cyan;
+
+        .arrow{
+            width: 0.9375rem;
+            }
+        }
+
+    
+    }
+
+    
+
+    @include desktop{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        &__image{
+            width: 45%;
+        }
+
+        &__text{
+            width: 45%;
+
+            h1{
+                font-size: initial;
+            }
+        }
+
+    }
+
+}
+
+.quotes{
+    @include spacing($small);
+
+    .quotation{
+        background-color: $bg-testimonials;
+        padding: 2rem $small;
+        border-radius: 10px;
+
+        position: relative;
+
+        p{
+            margin-bottom: $small;
+        }
+        
+        .quote-mark{
+            position: absolute;
+            width: 30px;
+            transform: translateY(-65px);
+            z-index: -1;
+        }
+
+        @include desktop{ //quotation mark styling
+
+            .quote-mark{
+                width: 60px;
+            }
+
+
+        }
+    }
+
+    .profile{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "picture name"
+        "picture desc";
+
+        &__img{
+            width: 50px;
+            border-radius: 50%;
+            margin-right: $xsmall;
+            grid-area: picture;
+        }
+
+        h5{
+            grid-area: name;
+        }
+
+        &__desc{
+            grid-area: desc;
+
+        }
+    }
+
+    @include desktop{
+        display: flex;
+        flex-flow: row wrap;
+        margin-bottom: $xlarge*3;
+
+
+        .quotation{
+            width: 30%;
+            margin-bottom: 0;
+            
+        &:not(:last-child){
+            margin-right: $medium;
+            }
+        }
+    }
+}
+
+.block{
+    background-color: $bg-testimonials;
+    border-radius: 10px;
+    padding: $medium $small $medium $small;
+    text-align: center;
+
+    transform: translateY(50%);
+
+    h1{
+        font-size: 1rem;
+    }
+
+    @include desktop{        
+        width: 65%;
+        margin: 0 auto;
+
+        h1{
+            font-size: 24px;
+            }
+    }
+
+    @include spacing($small);
+
+    &__form{
+        display: flex;
+        flex-flow: column wrap;
+        // align-items: center;
+        // justify-content: center;
+
+        @include spacing(mobile);
+
+        .form-input{
+            border-radius: 25px;
+            padding: $xsmall 0 $xsmall $xsmall;
+            width: 100%;
+        }
+
+        .form-cta{
+            width: 100%;
+            max-width: 300px;
+        }
+
+        @include desktop{
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-around;
+
+            .form-input{
+                margin-bottom: 0;
+                max-width: 56%;
+            }
+        }
+    }
+ 
+}
+
+
+
+.footer{
+    background-color: $bg-footer;
+    padding-top: 17.5rem;
+    padding-bottom: $large;
+
+    &__logo{
+        margin-bottom: $small;
+        
+    }
+
+    .links{
+
+        @include spacing($medium);
+
+        &-details{
+            display: grid;
+            grid-template-areas:
+            "img text";
+            grid-template-columns: auto 1fr;
+
+            margin-bottom: $xsmall;
+
+            img{
+                padding-top: 0.3rem;
+                margin-right: 1.3rem;
+                grid-area: img;
+                }
+
+            .details-p{
+                grid-area: text;
+                }
+        }
+
+        .location{
+            margin-bottom: $medium;
+        }
+
+        &-menu{
+            display: flex;
+            flex-flow: column wrap;
+            margin-bottom: $small;
+
+            .links-a:not(:last-child){
+                margin-bottom: 0.5rem;
+            }           
+        }
+
+        .social{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            margin-top: 6rem;
+            
+            &-link{
+            border: 2px solid white;
+            width: 16%;
+            border-radius: 50%;
+            padding: 10px 10px 7px 10px;
+            width: max-content;
+            
+            &:not(:last-child){
+                margin-right: 1.5rem;
+                }
+
+            }
+        }
+
+        @include desktop{
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(5, auto);
+            gap: 6rem;
+
+            &-menu:last-child{
+                margin-top: 0;
+            }
+
+            .social{
+                height: max-content;
+            }
+        }
+
+    }
+
+}

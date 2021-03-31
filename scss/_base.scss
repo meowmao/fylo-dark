@@ -2,8 +2,47 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0
-
 }
+
+a{
+    text-decoration: none;
+}
+
+ul, ol{
+    list-style-type: none;
+}
+
 body{
-    background: red;
+    background: $bg-main;
+    font-family: $opensans;
+    color: $white;
+}
+
+.container{
+    padding-left: $small;
+    padding-right: $small;
+}
+
+header{
+    padding-top: $small;
+    padding-bottom: $small;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }

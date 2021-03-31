@@ -1,0 +1,29 @@
+//media query
+@mixin tablet{
+    @media only screen and (min-width:768px){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media only screen and (min-width: 992px){
+        @content;
+    }
+}
+
+@mixin spacing($spacing){
+
+    &>*:not(:last-child){
+    @if $spacing == 'mobile'{
+        margin-bottom: $small;
+        }
+    @else if $spacing == 'desktop'{
+        margin-bottom: $medium; 
+        }
+        
+    @else{
+        margin-bottom: $spacing;
+        }
+    }
+   
+}
